@@ -31,7 +31,7 @@ const Jumbotron = () =>
                 </p>
                 <hr className="my-4" />
                 <Link href="/locations">
-                    <a className="btn btn-primary btn-lg" role="button">Explore our locations</a>                
+                    <a id="explore-location" className="btn btn-primary btn-lg" role="button">Explore our locations</a>
                 </Link>
             </div>
         </div>

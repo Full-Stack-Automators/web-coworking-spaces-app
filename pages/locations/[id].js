@@ -8,7 +8,7 @@ const Index = ({ location }) =>
     <Layout>
         <section className="container text-white bg-dark py-3">
             <div className="row">
-                <img src={'/img/' + location.image} className="col-sm-6" alt={location.name} />
+                <img src={'./img/' + location.image} className="col-sm-6" alt={location.name} />
                 {getDetails(location)}
             </div>
             {getTable(location)}
@@ -45,25 +45,25 @@ const getTable = (location) =>
         <tbody>            
             {location.rooms.map((room) => (
                 <tr key="{room.description}">
-                    <th scope="row">
+                    <th id="room" scope="row">
                         {room.description}
                     </th>
-                    <td>
+                    <td id="monthly-rate">
                         {Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(room.monthlyRate)}
                     </td>
-                    <td>
+                    <td id="seats">
                         {room.seats}
                     </td>
-                    <td>
+                    <td id="private-facilities">
                         {room.privateFacilities ? <Check /> : ( <></> )}
                     </td>
-                    <td>
+                    <td id="phone">
                         {room.phoneIncluded ? <Check /> : ( <></> )}
                     </td>
-                    <td>
+                    <td id="windows">
                         {room.windows ? <Check /> : ( <></> )}
                     </td>
-                    <td>
+                    <td id="corner">
                         {room.corner ? <Check /> : ( <></> )}
                     </td>
                 </tr>

@@ -4,7 +4,7 @@ const Footer = () =>
     <footer className="card bg-secondary">
         <div className="card-body container d-flex justify-content-between">
             <Link href="/">
-                <a className="btn btn-secondary">
+                <a id="contonso-spaces-footer-link" className="btn btn-secondary">
                     <i className="fa-stack">
                         <i className="fa fa-circle-o-notch fa-stack-2x"></i>
                         <i className="fa fa-building-o fa-stack-1x"></i>

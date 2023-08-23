@@ -31,7 +31,7 @@ const Index = ({ locationGroups }) =>
 
 const getLocation = (location) =>
     <div className="card-body">
-        <h5 className="card-title text-center">
+        <h5 id="spaces-name" className="card-title text-center">
             {location.name}
         </h5>
         <div className="card-text my-2">
@@ -43,7 +43,7 @@ const getLocation = (location) =>
             </small>
         </p>
         <Link href="/locations/[id]" as={`/locations/${location.id}`}>
-            <a className="btn btn-secondary">
+            <a id="learn-more" className="btn btn-secondary">
                 Learn more
             </a>
         </Link>
