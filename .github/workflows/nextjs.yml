@@ -93,3 +93,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Print contents of folder recursively
+        run: ls -R
+
