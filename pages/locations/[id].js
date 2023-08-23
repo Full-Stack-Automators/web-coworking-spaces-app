@@ -8,7 +8,7 @@ const Index = ({ location }) =>
     <Layout>
         <section className="container text-white bg-dark py-3">
             <div className="row">
-                <img src={'img/' + location.image} className="col-sm-6" alt={location.name} />
+                <img src={'/img/' + location.image} className="col-sm-6" alt={location.name} />
                 {getDetails(location)}
             </div>
             {getTable(location)}
