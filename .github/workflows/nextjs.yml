@@ -81,6 +81,8 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
+      - name: Print contents of folder recursively
+        run: ls -R
 
   # Deployment job
   deploy:
@@ -93,6 +95,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Print contents of folder recursively
-        run: ls -R
 
