@@ -22,7 +22,7 @@ const Index = ({ locationGroups }) =>
 
 const getLocation = (location) =>
     <>
-        <img src={'/img/' + location.image} className="card-img-top" alt="{location.name}" />
+        <img src={'/out/img/' + location.image} className="card-img-top" alt="{location.name}" />
         <div className="card-body">
             <h5 className="card-title text-center">
                 {location.name}
