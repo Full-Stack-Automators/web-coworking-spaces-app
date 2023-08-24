@@ -20,7 +20,7 @@ const Jumbotron = () =>
         `}</style>
         <div className="jumbotron jumbotron-fluid bg-dark mb-0" alt="Photo by Benjamin Child on Unsplash - https://unsplash.com/photos/GWe0dlVD9e0">
             <div className="container text-white">
-                <h1 className="display-2 text-white d-none d-lg-block">
+                <h1 id="header-tagline"  className="display-2 text-white d-none d-lg-block">
                     Elevate your work style
                 </h1>
                 <h1 className="display-4 text-white text-center d-lg-none">

@@ -1,3 +1,27 @@
 node_modules/
 .next/
 .idea/
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+cypress/videos
+
+cypress/screenshots
+
+log/
+npm_install_debug.log
+results/
