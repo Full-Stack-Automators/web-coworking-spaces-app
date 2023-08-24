@@ -1,5 +1,5 @@
-import { HomePage as DesktopPage } from './desktop/Homepage';
-import { HomePage as MobilePage } from './mobile/Homepage';
+import { HomePage as DesktopPage } from './desktop/HomePage';
+import { HomePage as MobilePage } from './mobile/HomePage';
 
 let ResponsivePage = DesktopPage;
 
