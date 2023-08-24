@@ -22,8 +22,8 @@ export default defineConfig({
   responseTimeout: 20000,
 
   e2e: {
-    baseUrl: 'http://localhost:3000',
-    // baseUrl: 'https://full-stack-automators.github.io/next-app-deploy/',
+    // baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
       let currentDate = new Date()
       console.log(currentDate.getDate() + "/"
