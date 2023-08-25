@@ -5,9 +5,9 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+#  # Runs on pushes targeting the default branch
+#  push:
+#    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,7 +33,13 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Save variable and print
+        env:
+          RUN_NAME: ${{ inputs.RUN_NAME }}"
+        run: |
+          echo "PRINTING VARIABLE NAME: $RUN_NAME"
+      - name: Print input
+        run: |
           echo "Log level: ${{ inputs.RUN_NAME }}"
 
 #jobs:
