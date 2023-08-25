@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Log level: ${{ github.event.inputs.RUN_NAME }}"
+          echo "Log level: ${{ inputs.RUN_NAME }}"
 
 #jobs:
 #  # Build job
