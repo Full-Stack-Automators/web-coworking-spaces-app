@@ -30,11 +30,11 @@ permissions:
 #  cancel-in-progress: false
 
 jobs:
-  test-commands:
+  printInputs:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.inputs.RUN_NAME }} >> "$GITHUB_ENV"
-      - run: echo ${{env.RUN_NAME}}
+      - run: |
+          echo "Log level: ${{ github.event.inputs.RUN_NAME }}"
 
 #jobs:
 #  # Build job
