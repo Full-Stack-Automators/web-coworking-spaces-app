@@ -7,7 +7,7 @@ beforeEach(() => {
     cy.visit('')
 });
 
-describe.skip('Home Page Test Suite', () => {
+describe('Home Page Test Suite', () => {
 
 
     it('WEBC-5 Verify that the location is correct', () => {

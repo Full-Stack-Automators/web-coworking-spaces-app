@@ -45,6 +45,9 @@ jobs:
         env:
           RUN_NAME: ${{ inputs.RUN_NAME }}"
           DEVICE: ${{ inputs.DEVICE }}"
+          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
+          XRAY_CLIENT_SECRET: ${{ inputs.XRAY_CLIENT_SECRET }}"
+          JIRA_API_TOKEN: ${{ inputs.JIRA_API_TOKEN }}"
         run: |
           echo "PRINTING VARIABLE NAME: $RUN_NAME"
           echo "PRINTING VARIABLE DEVICE: $DEVICE

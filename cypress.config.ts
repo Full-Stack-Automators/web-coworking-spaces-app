@@ -55,9 +55,9 @@ export default defineConfig({
     specPattern: 'cypress/integration/**',
   },
   env: {
-    XRAY_CLIENT_ID: '402C4276B9614A70BE3D9E24AA1F459F',
-    XRAY_CLIENT_SECRET: 'e4abcdf917230e9d9fc2ec129f0ced46ceb26ae609c59a09e11d2735dc8fdb59',
+    XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
+    XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
     JIRA_USERNAME: 'admin@fullstackautomators.com',
-    JIRA_API_TOKEN: 'ATATT3xFfGF0YiJLBL_6MyM3nYGL92AgJ1ee4D8vekdxsgh7ESHjWXLfk6t05blgLhTeKS7-LMqVcF5QEb-yI2Mun9gjH8bYGXW799-mpXkK34aTfmQOe7-xv04AyNKrMgEgnpuM2mG3p6xMedW1VsgFAauNutglgR3t78fcdzk9SvAd8poRnmM=13C320F4',
+    JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
   }
 });
