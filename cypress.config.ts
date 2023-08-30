@@ -25,24 +25,24 @@ export default defineConfig({
     // baseUrl: 'http://localhost:3000',
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
-      let currentDate = new Date()
-      console.log(currentDate.getDate() + "/"
-          + (currentDate.getMonth()+1) + "/"
-          + currentDate.getFullYear() + " - "
-          + currentDate.getHours() + ":"
-          + currentDate.getMinutes())
-
-      configureXrayPlugin(
-          config,
-          {
-            jira: {
-              projectKey: 'WEBC',
-              url: 'https://fullstackautomators.atlassian.net/',
-              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${currentDate}`
-            }
-          }
-      );
-      addXrayResultUpload(on);
+      // let currentDate = new Date()
+      // console.log(currentDate.getDate() + "/"
+      //     + (currentDate.getMonth()+1) + "/"
+      //     + currentDate.getFullYear() + " - "
+      //     + currentDate.getHours() + ":"
+      //     + currentDate.getMinutes())
+      //
+      // configureXrayPlugin(
+      //     config,
+      //     {
+      //       jira: {
+      //         projectKey: 'WEBC',
+      //         url: 'https://fullstackautomators.atlassian.net/',
+      //         testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${currentDate}`
+      //       }
+      //     }
+      // );
+      // addXrayResultUpload(on);
       const device = process.env.DEVICE || 'DESKTOP';
       // const device = process.env.DEVICE || 'IPHONE_12_PRO';
       config.env.deviceType = DEVICES[device].deviceType;
