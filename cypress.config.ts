@@ -43,7 +43,8 @@ export default defineConfig({
           }
       );
       addXrayResultUpload(on);
-      const device = process.env.DEVICE || 'DESKTOP';
+      const device = 'DESKTOP';
+      cy.log("***********************: " + process.env.DEVICE);
       // const device = process.env.DEVICE || 'IPHONE_12_PRO';
       config.env.deviceType = DEVICES[device].deviceType;
       config.env.isMobile = config.env.deviceType === 'mobile';
