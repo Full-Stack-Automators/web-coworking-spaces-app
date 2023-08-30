@@ -140,19 +140,19 @@ jobs:
       - name: Install modules
         run: npm install
 
-      - name: Save variable and print
-        env:
-           RUN_NAME: ${{ inputs.RUN_NAME }}"
-           DEVICE: ${{ inputs.DEVICE }}"
-           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
-           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
-           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
-        run: |
-           echo "PRINTING VARIABLE NAME: $RUN_NAME"
-           echo "PRINTING VARIABLE DEVICE: $DEVICE"
-           echo "PRINTING VARIABLE DEVICE: $XRAY_CLIENT_ID"
-           echo "PRINTING VARIABLE DEVICE: $XRAY_CLIENT_SECRET"
-           echo "PRINTING VARIABLE DEVICE: $JIRA_API_TOKEN"  
+#      - name: Save variable and print
+#        env:
+#           RUN_NAME: ${{ inputs.RUN_NAME }}"
+#           DEVICE: ${{ inputs.DEVICE }}"
+#           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
+#           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
+#           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
+#        run: |
+#           echo "PRINTING VARIABLE NAME: $RUN_NAME"
+#           echo "PRINTING VARIABLE DEVICE: $DEVICE"
+#           echo "PRINTING VARIABLE DEVICE: $XRAY_CLIENT_ID"
+#           echo "PRINTING VARIABLE DEVICE: $XRAY_CLIENT_SECRET"
+#           echo "PRINTING VARIABLE DEVICE: $JIRA_API_TOKEN"
 
 #      - name: Cypress run
 #        uses: cypress-io/github-action@v5
@@ -163,6 +163,27 @@ jobs:
 #          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
 #          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
 
+#      - name: Cypress run
+#        env:
+#          RUN_NAME: ${{ inputs.RUN_NAME }}"
+#          DEVICE: ${{ inputs.DEVICE }}"
+#          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
+#          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
+#          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
+#        run: |
+#          npx cypress run
+
+      - name: Copy variables to global env
+        run: |
+          echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ inputs.CYPRESS_RUN_NAME}}" >> $GITHUB_ENV
+          echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
+          echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
+          echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
+          echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Print env variables
+        run: env
+
       - name: Cypress run
         env:
           RUN_NAME: ${{ inputs.RUN_NAME }}"
@@ -171,5 +192,4 @@ jobs:
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
         run: |
-          npx cypress run
-        
+          npx cypress run    
