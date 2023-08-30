@@ -38,8 +38,7 @@ export default defineConfig({
             jira: {
               projectKey: 'WEBC',
               url: 'https://fullstackautomators.atlassian.net/',
-              // testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${modifiedDate}`,
-              testExecutionIssueSummary: ` ${Cypress.env("RUN_NAME")} + ${modifiedDate}`
+              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${modifiedDate}`
             }
           }
       );
@@ -56,12 +55,9 @@ export default defineConfig({
     specPattern: 'cypress/integration/**',
   },
   env: {
-    // XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
-    XRAY_CLIENT_ID: Cypress.env("XRAY_CLIENT_ID"),
-    // XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
-    XRAY_CLIENT_SECRET: Cypress.env("XRAY_CLIENT_SECRET"),
+    XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
+    XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
     JIRA_USERNAME: 'admin@fullstackautomators.com',
-    // JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
-    JIRA_API_TOKEN: Cypress.env("JIRA_API_TOKEN"),
+    JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
   }
 });
