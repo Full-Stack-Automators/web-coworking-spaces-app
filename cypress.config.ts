@@ -26,11 +26,11 @@ export default defineConfig({
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
       let currentDate = new Date()
-      console.log(currentDate.getDate() + "/"
+      let modifiedDate = currentDate.getDate() + "/"
           + (currentDate.getMonth()+1) + "/"
           + currentDate.getFullYear() + " - "
           + currentDate.getHours() + ":"
-          + currentDate.getMinutes())
+          + currentDate.getMinutes();
 
       configureXrayPlugin(
           config,
@@ -38,7 +38,7 @@ export default defineConfig({
             jira: {
               projectKey: 'WEBC',
               url: 'https://fullstackautomators.atlassian.net/',
-              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${currentDate}`
+              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${modifiedDate}`
             }
           }
       );
