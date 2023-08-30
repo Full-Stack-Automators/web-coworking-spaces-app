@@ -164,10 +164,12 @@ jobs:
 #          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
 
       - name: Cypress run
-        run: npx cypress run
         env:
           RUN_NAME: ${{ inputs.RUN_NAME }}"
           DEVICE: ${{ inputs.DEVICE }}"
           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
+        run: |
+          npx cypress run
+        
