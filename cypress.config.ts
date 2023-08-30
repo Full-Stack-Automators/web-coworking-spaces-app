@@ -25,24 +25,24 @@ export default defineConfig({
     // baseUrl: 'http://localhost:3000',
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
-      // let currentDate = new Date()
-      // console.log(currentDate.getDate() + "/"
-      //     + (currentDate.getMonth()+1) + "/"
-      //     + currentDate.getFullYear() + " - "
-      //     + currentDate.getHours() + ":"
-      //     + currentDate.getMinutes())
-      //
-      // configureXrayPlugin(
-      //     config,
-      //     {
-      //       jira: {
-      //         projectKey: 'WEBC',
-      //         url: 'https://fullstackautomators.atlassian.net/',
-      //         testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${currentDate}`
-      //       }
-      //     }
-      // );
-      // addXrayResultUpload(on);
+      let currentDate = new Date()
+      console.log(currentDate.getDate() + "/"
+          + (currentDate.getMonth()+1) + "/"
+          + currentDate.getFullYear() + " - "
+          + currentDate.getHours() + ":"
+          + currentDate.getMinutes())
+
+      configureXrayPlugin(
+          config,
+          {
+            jira: {
+              projectKey: 'WEBC',
+              url: 'https://fullstackautomators.atlassian.net/',
+              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${currentDate}`
+            }
+          }
+      );
+      addXrayResultUpload(on);
       const device = process.env.DEVICE || 'DESKTOP';
       // const device = process.env.DEVICE || 'IPHONE_12_PRO';
       config.env.deviceType = DEVICES[device].deviceType;
@@ -55,9 +55,12 @@ export default defineConfig({
     specPattern: 'cypress/integration/**',
   },
   env: {
-    XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
-    XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
+    // XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
+    XRAY_CLIENT_ID: "402C4276B9614A70BE3D9E24AA1F459F",
+    // XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
+    XRAY_CLIENT_SECRET: "e4abcdf917230e9d9fc2ec129f0ced46ceb26ae609c59a09e11d2735dc8fdb59",
     JIRA_USERNAME: 'admin@fullstackautomators.com',
-    JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
+    // JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
+    JIRA_API_TOKEN: "ATATT3xFfGF0CVWHSwPVf1LWkX0kqfT3lCTusosqRXvXBVOx_2zp4VvUGfoQMHIDUPbBVaz8C74X0HyRAiJE7E9ekZa2zPzIaLt7Vgjo2gvQwjpY7cfOYY_AIyGhna-NWC7neFNxdpyIxbN1wxA-HCKLiLBUVE9miiTGiiWtVXXZEyAfLVewtRk=851D27D8",
   }
 });
