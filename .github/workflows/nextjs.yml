@@ -12,12 +12,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      DEVICE:
+      CYPRESS_DEVICE:
         description: 'Device the tests shall run on'
         required: true
         default:
           'DESKTOP'
-      RUN_NAME:
+      CYPRESS_RUN_NAME:
         description: 'The name of the run'
         required: true
         default: 'Regression' 
@@ -128,14 +128,6 @@ jobs:
       # Run Cypress tests
       - name: Checkout
         uses: actions/checkout@v3
-        env:
-          RUN_NAME: ${{ inputs.RUN_NAME }}"
-          DEVICE: ${{ inputs.DEVICE }}"
-          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
-          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
-      - name: Printing directory
-        run: pwd
 
       - name: Install modules
         run: npm install
@@ -180,16 +172,9 @@ jobs:
           echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
           echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
           echo "CYPRESS_AUTOMATED_TESTS_USERNAME1=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
-
-      - name: Print env variables
+          
+      - name: Print env
         run: env
 
       - name: Cypress run
-        env:
-          RUN_NAME: ${{ inputs.RUN_NAME }}"
-          DEVICE: ${{ inputs.DEVICE }}"
-          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
-          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
-        run: |
-          npx cypress run    
+        run:  npx cypress run
