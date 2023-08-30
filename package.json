@@ -17,7 +17,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.21",
+    "@types/react": "18.0.1",
     "browserstack-cypress-cli": "^1.25.2",
     "cypress": "^12.17.4",
     "cypress-xray-plugin": "^4.0.2",
