@@ -134,5 +134,6 @@ jobs:
           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
-        uses: cypress-io/github-action@v5
+        uses: | 
+          cypress-io/github-action@v5
 
