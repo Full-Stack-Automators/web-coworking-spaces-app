@@ -122,15 +122,15 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
       # Run Cypress tests
       - name: Checkout
         uses: actions/checkout@v3
       - name: Printing directory
         run: pwd
-
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
+        
       - name: Cypress run
         uses: cypress-io/github-action@v5
         env:
