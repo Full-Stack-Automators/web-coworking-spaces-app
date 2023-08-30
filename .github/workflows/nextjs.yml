@@ -122,20 +122,20 @@ jobs:
 #        id: deployment
 #        uses: actions/deploy-pages@v2
 #
-#  cypress-run:
-#    runs-on: ubuntu-latest
-#    steps:
-#      # Run Cypress tests
-#      - name: Checkout
-#        uses: actions/checkout@v3
-#      - name: Printing directory
-#        run: pwd
-#
-#      - name: Cypress run
-#        uses: cypress-io/github-action@v5
-#        env:
-#          RUN_NAME: ${{ inputs.RUN_NAME }}"
-#          DEVICE: ${{ inputs.DEVICE }}"
-#          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
-#          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
-#          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      # Run Cypress tests
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Printing directory
+        run: pwd
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        env:
+          RUN_NAME: ${{ inputs.RUN_NAME }}"
+          DEVICE: ${{ inputs.DEVICE }}"
+          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
+          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
