@@ -165,9 +165,9 @@ jobs:
         run: |
           echo "RUN_NAME=${{ inputs.CYPRESS_RUN_NAME}}" >> $GITHUB_ENV
           echo "DEVICE=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
-          echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
+          echo "CYPRESS_XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
+          echo "CYPRESS_XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
+          echo "CYPRESS_JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
