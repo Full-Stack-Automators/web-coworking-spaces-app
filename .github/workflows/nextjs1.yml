@@ -172,5 +172,8 @@ jobs:
       - name: Print env
         run: env
 
+      - name: 'Installing browserstack-cypress-cli'
+        run: npm install -g browserstack-cypress-cli
+
       - name: Cypress run
         run:  browserstack-cypress run
