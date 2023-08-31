@@ -57,8 +57,11 @@ export default defineConfig({
   },
   env: {
     XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
+    // XRAY_CLIENT_ID: "402C4276B9614A70BE3D9E24AA1F459F",
     XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
+    // XRAY_CLIENT_SECRET: "e4abcdf917230e9d9fc2ec129f0ced46ceb26ae609c59a09e11d2735dc8fdb59",
     JIRA_USERNAME: 'admin@fullstackautomators.com',
     JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
+    // JIRA_API_TOKEN: "ATATT3xFfGF0WLN52e9I9a-L-Xkngo_zu8DFIbYNn4Z0n-kv0K0eMN_TVrNP2rL8374H182VhI_5ia9jqfXhqYc3fLkPGmjzMKRy-bvl5_fyDbhVmbMMDF3mpf_FDnf6id_KIdV39gnk_uz2D1oZAy1oVjliGEge9Fzzr2RD8Ek5Bz84xqhMG4s=CF0D6893",
   }
 });
