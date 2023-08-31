@@ -155,16 +155,6 @@ jobs:
 #          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
 #          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
 
-#      - name: Cypress run
-#        env:
-#          RUN_NAME: ${{ inputs.RUN_NAME }}"
-#          DEVICE: ${{ inputs.DEVICE }}"
-#          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}"
-#          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}"
-#          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}"
-#        run: |
-#          npx cypress run
-
       - name: Copy variables to global env
         run: |
           echo "RUN_NAME=${{ inputs.CYPRESS_RUN_NAME}}" >> $GITHUB_ENV
@@ -177,4 +167,4 @@ jobs:
         run: env
 
       - name: Cypress run
-        run:  npx cypress run
+        run:  browserstack-cypress run

@@ -2,7 +2,8 @@ import {defineConfig} from "cypress";
 import {addXrayResultUpload, configureXrayPlugin} from "cypress-xray-plugin";
 import "cypress-xray-plugin/register";
 import {DEVICES} from "./cypress/support/Enums/Devices";
-
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export default defineConfig({
   projectId: 'bg4znc',
@@ -20,6 +21,7 @@ export default defineConfig({
   pageLoadTimeout: 30000,
   requestTimeout: 20000,
   responseTimeout: 20000,
+  experimentalWebKitSupport: true,
 
   e2e: {
     // baseUrl: 'http://localhost:3000',
@@ -38,13 +40,12 @@ export default defineConfig({
             jira: {
               projectKey: 'WEBC',
               url: 'https://fullstackautomators.atlassian.net/',
-              testExecutionIssueSummary: ` ${process.env.RUN_NAME} + ${modifiedDate}`
+              testExecutionIssueSummary: ` ${process.env.RUN_NAME} ${modifiedDate}`
             }
           }
       );
       addXrayResultUpload(on);
-      const device = 'DESKTOP';
-      // const device = process.env.DEVICE || 'IPHONE_12_PRO';
+      const device = process.env.DEVICE || 'IPHONE_12_PRO';
       config.env.deviceType = DEVICES[device].deviceType;
       config.env.isMobile = config.env.deviceType === 'mobile';
       config.env.isTablet = config.env.deviceType === 'tablet';
