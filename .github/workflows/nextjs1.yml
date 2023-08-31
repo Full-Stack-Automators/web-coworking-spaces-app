@@ -176,4 +176,4 @@ jobs:
         run: npm install -g browserstack-cypress-cli
 
       - name: Cypress run
-        run:  browserstack-cypress run
+        run:  XRAY_CLIENT_ID=$XRAY_CLIENT_ID XRAY_CLIENT_SECRET=$XRAY_CLIENT_SECRET JIRA_API_TOKEN=$JIRA_API_TOKEN browserstack-cypress run
