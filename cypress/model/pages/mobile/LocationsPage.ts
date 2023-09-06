@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import { LocationsPage as DesktopPage } from '../desktop/LocationsPage';
 
 export class LocationsPage extends DesktopPage {

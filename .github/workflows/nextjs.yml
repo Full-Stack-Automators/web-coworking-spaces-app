@@ -20,7 +20,17 @@ on:
       CYPRESS_RUN_NAME:
         description: 'The name of the run'
         required: true
-        default: 'Regression' 
+        default: 'Regression'
+
+      BROWSER:
+        description: 'Browser that tests will run on'
+        required: true
+        default: chrome
+        type: choice
+        options:
+            - chrome
+            - electron
+            - firefox
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -162,9 +172,10 @@ jobs:
           echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
           echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
           echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
+          echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
 
       - name: Cypress run
-        run:  npx cypress run
+        run:  npx cypress run --browser $BROWSER

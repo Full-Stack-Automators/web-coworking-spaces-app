@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js site to Pages - Browserstack
+name: Deploy Next.js site to Pages - Browserstack - Set browser and version
 
 on:
 #  # Runs on pushes targeting the default branch
@@ -185,4 +185,4 @@ jobs:
         run: npm install -g browserstack-cypress-cli
 
       - name: Cypress run
-        run:  browserstack-cypress run
+        run:  browserstack-cypress run --sync --env XRAY_CLIENT_ID=$XRAY_CLIENT_ID,XRAY_CLIENT_SECRET=$XRAY_CLIENT_SECRET,JIRA_API_TOKEN=$JIRA_API_TOKEN

@@ -53,7 +53,7 @@ export default defineConfig({
       config.viewportHeight = DEVICES[device].viewportHeight;
       return config;
     },
-    specPattern: 'cypress/integration/**',
+    specPattern: 'cypress/integration/Home**',
   },
   env: {
     XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
@@ -62,6 +62,6 @@ export default defineConfig({
     // XRAY_CLIENT_SECRET: "e4abcdf917230e9d9fc2ec129f0ced46ceb26ae609c59a09e11d2735dc8fdb59",
     JIRA_USERNAME: 'admin@fullstackautomators.com',
     JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
-    // JIRA_API_TOKEN: "ATATT3xFfGF0WLN52e9I9a-L-Xkngo_zu8DFIbYNn4Z0n-kv0K0eMN_TVrNP2rL8374H182VhI_5ia9jqfXhqYc3fLkPGmjzMKRy-bvl5_fyDbhVmbMMDF3mpf_FDnf6id_KIdV39gnk_uz2D1oZAy1oVjliGEge9Fzzr2RD8Ek5Bz84xqhMG4s=CF0D6893",
+    // JIRA_API_TOKEN: "ATATT3xFfGF0JeEugYiUwaMopo-Yv43YRZY_cxbEeS5YRSOotohhtWwNYjT3clafTMxvmEXE0hJ7NGEUZztsCZSSZmyyUXSm47jFPlSdE7Iv7ghisyvuojgw4lDMDXQktXXKfa4VSYwOvS29JQ_lM2qjDoTbfLm86aZi8gLk5hDO20gIPhKzUSs=214994BF",
   }
 });

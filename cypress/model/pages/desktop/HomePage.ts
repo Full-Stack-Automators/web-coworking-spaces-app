@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
 
 export class HomePage {

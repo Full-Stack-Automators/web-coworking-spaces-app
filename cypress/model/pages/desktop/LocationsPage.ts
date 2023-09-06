@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
 
 export class LocationsPage {
@@ -13,7 +11,7 @@ export class LocationsPage {
     verifyLocationsName(spacesName: string): void {
         cy.fixture(this.helperFunctions.const.assertionFixtureFile).then((data) => {
             this.elements.spacesName().then(el => {
-                expect(data['spacesNames'][spacesName]).contains(el.text())
+                expect(data['spacesNames'][spacesName]).contains(el.text());
             })
         })
     }
