@@ -1,0 +1,66 @@
+# Sample workflow for building and deploying a Next.js site to GitHub Pages
+#
+# To get started with Next.js see: https://nextjs.org/docs/getting-started
+#
+name: Deploy Next.js site to Pages - Browserstack
+
+on:
+#  # Runs on pushes targeting the default branch
+#  push:
+#    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      CYPRESS_DEVICE:
+        description: 'Device the tests shall run on'
+        required: true
+        default:
+          'DESKTOP'
+      CYPRESS_RUN_NAME:
+        description: 'The name of the run'
+        required: true
+        default: 'Regression'
+      BROWSER:
+        description: 'Browser tests will run on'
+        required: true
+        default:
+          'chrome'
+      VERSION:
+        description: 'The name of the run'
+        required: true
+        default: 'Regression'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      # Run Cypress tests
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install modules
+        run: npm install
+
+      - name: 'BrowserStack Env Setup'
+        uses: 'browserstack/github-actions/setup-env@master'
+        with:
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
+      - name: Copy variables to global env
+        run: |
+          echo "RUN_NAME=${{ inputs.CYPRESS_RUN_NAME}}" >> $GITHUB_ENV
+          echo "DEVICE=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
+          echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
+          echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
+          echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Print env
+        run: env
+
+      - name: 'Installing browserstack-cypress-cli'
+        run: npm install -g browserstack-cypress-cli
+
+      - name: Cypress run
+        run:  browserstack-cypress run
