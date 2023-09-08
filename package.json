@@ -9,6 +9,7 @@
     "start": "next start --port 80"
   },
   "dependencies": {
+    "cypress": "^12.17.4",
     "cypress-tags": "^1.1.2",
     "dotenv": "^16.3.1",
     "linqjs": "^1.0.2",
@@ -20,7 +21,7 @@
   "devDependencies": {
     "@types/react": "18.0.1",
     "browserstack-cypress-cli": "^1.25.2",
-    "cypress": "^12.17.4",
+    "cypress-xpath": "^2.0.1",
     "cypress-xray-plugin": "^4.0.2",
     "typescript": "^5.1.6"
   }

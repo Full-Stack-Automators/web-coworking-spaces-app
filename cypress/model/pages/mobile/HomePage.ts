@@ -11,7 +11,7 @@ export class HomePage extends DesktopPage {
     };
 
     verifyHeaderText() {
-        super.verifyHeaderText();
+        super.verifyH1Text();
         cy.log("This is a mobile verifyHeaderText() function");
     }
 }

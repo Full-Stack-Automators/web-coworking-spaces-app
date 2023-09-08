@@ -18,6 +18,11 @@ on:
         required: true
         default: 'Regression'
 
+      TAGS:
+        description: 'Grouping of tests to run'
+        required: true
+        default: 'Regression'
+
       BROWSER:
         description: 'Browser that tests will run on'
         required: true
@@ -169,9 +174,10 @@ jobs:
           echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
           echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
+          echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
 
       - name: Cypress run
-        run:  npx cypress run --browser $BROWSER
+        run:  CYPRESS_INCLUDE_TAGS=$TAGS npx cypress run --browser $BROWSER

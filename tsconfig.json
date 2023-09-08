@@ -1,12 +1,32 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["es6", "dom", "ES2021.String"],
-    "types": ["cypress", "node"],
+    "lib": [
+      "es6",
+      "dom",
+      "ES2021.String"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
-  "include": ["**/*.ts", "../node_modules"],
+  "include": [
+    "**/*.ts",
+    "../node_modules"
+  ],
   "allowJs": true,
   "skipLibCheck": true,
   "allowSyntheticDefaultImports": true,
@@ -16,5 +36,8 @@
   "resolveJsonModule": true,
   "isolatedModules": true,
   "noEmit": true,
-  "jsx": "react"
+  "jsx": "react",
+  "exclude": [
+    "node_modules"
+  ]
 }

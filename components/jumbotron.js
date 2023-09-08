@@ -26,7 +26,7 @@ const Jumbotron = () =>
                 <h1 className="display-4 text-white text-center d-lg-none">
                     Elevate your work style
                 </h1>
-                <p className="lead text-center">
+                <p id="header-description" className="lead text-center">
                     Transform the way you work, meet clients and collaborate with an inspiring and unique office experience.
                 </p>
                 <hr className="my-4" />

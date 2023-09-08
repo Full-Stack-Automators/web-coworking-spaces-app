@@ -9,7 +9,7 @@ const Board = ({ location }) =>
     </>;
 
 const getBlock = (indicator, symbol, success, failure) =>
-    <div className="row">
+    <div id="location-feature" className="row">
         <i className={`fa-stack fa-lg col-sm-2 text-center ${indicator ? '' : 'text-muted'}`}>
             <i className="fa fa-circle fa-stack-2x" />
             <i className={`fa ${symbol} fa-stack-1x text-dark`} />

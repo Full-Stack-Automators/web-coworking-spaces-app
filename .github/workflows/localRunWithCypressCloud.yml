@@ -18,6 +18,16 @@ on:
         required: true
         default: 'Regression'
 
+      CLOUD_RUN_NAME:
+        description: 'The name of the run for Cypress Dashboard'
+        required: true
+        default: 'Regression'
+
+      TAGS:
+        description: 'Grouping of tests to run'
+        required: true
+        default: 'Regression'
+
       BROWSER:
         description: 'Browser that tests will run on'
         required: true
@@ -61,9 +71,11 @@ jobs:
           echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
           echo "$CLOUD_KEY=${{ inputs.BROWSER }}" >> $GITHUB_ENV
+          echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
+          echo "CLOUD_RUN_NAME=${{ inputs.CLOUD_RUN_NAME }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
 
       - name: Cypress run
-        run:  npx cypress run --browser $BROWSER --record --key $CLOUD_KEY
+        run:  CYPRESS_INCLUDE_TAGS=$TAGS COMMIT_INFO_MESSAGE=$CLOUD_RUN_NAME npx cypress run --browser $BROWSER --record --key $CLOUD_KEY

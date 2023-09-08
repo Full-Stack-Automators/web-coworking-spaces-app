@@ -1,0 +1,36 @@
+{
+  "locations": [
+    {
+      "name" : "MCGLYNN - KUNZE SQUARE",
+      "parking" : true,
+      "conferenceRooms" : true,
+      "receptionServices" : true,
+      "publicAccess" : false,
+      "address" : "320 Westlake Ave N Seattle, WA 98109"
+    },
+    {
+      "name" : "SCHOEN, RAU AND WINDLER SQUARE",
+      "parking" : false,
+      "conferenceRooms" : false,
+      "receptionServices" : false,
+      "publicAccess" : true,
+      "address" : "3400 Menaul Blvd NE Albuquerque, NM 87107"
+    },
+    {
+      "name" : "CRONIN GROUP PLAZA",
+      "parking" : false,
+      "conferenceRooms" : false,
+      "receptionServices" : true,
+      "publicAccess" : false,
+      "address" : "2126 Abbott Martin Rd Nashville, TN 37215"
+    },
+    {
+      "name" : "BASHIRIAN - WILLIAMSON CENTER",
+      "parking" : false,
+      "conferenceRooms" : true,
+      "receptionServices" : true,
+      "publicAccess" : false,
+      "address" : "3309 Esperanza Xing Austin, TX 78758"
+    }
+  ]
+}

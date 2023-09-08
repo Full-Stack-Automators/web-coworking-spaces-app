@@ -1,8 +1,10 @@
+/// <reference types='cypress-tags' />
 import {defineConfig} from "cypress";
 import {addXrayResultUpload, configureXrayPlugin} from "cypress-xray-plugin";
 import "cypress-xray-plugin/register";
 import {DEVICES} from "./cypress/support/Enums/Devices";
 import * as dotenv from "dotenv";
+import {tagify} from "cypress-tags";
 dotenv.config();
 
 export default defineConfig({
@@ -26,24 +28,27 @@ export default defineConfig({
   e2e: {
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
-      let currentDate = new Date()
-      let modifiedDate = currentDate.getDate() + "/"
-          + (currentDate.getMonth()+1) + "/"
-          + currentDate.getFullYear() + " - "
-          + currentDate.getHours() + ":"
-          + currentDate.getMinutes();
+      on('file:preprocessor', tagify(config));
+      if (process.env.XRAY != undefined) {
+        let currentDate = new Date()
+        let modifiedDate = currentDate.getDate() + "/"
+            + (currentDate.getMonth()+1) + "/"
+            + currentDate.getFullYear() + " - "
+            + currentDate.getHours() + ":"
+            + currentDate.getMinutes();
 
-      configureXrayPlugin(
-          config,
-          {
-            jira: {
-              projectKey: 'WEBC',
-              url: 'https://fullstackautomators.atlassian.net/',
-              testExecutionIssueSummary: ` ${process.env.RUN_NAME} ${modifiedDate}`
+        configureXrayPlugin(
+            config,
+            {
+              jira: {
+                projectKey: 'WEBC',
+                url: 'https://fullstackautomators.atlassian.net/',
+                testExecutionIssueSummary: ` ${process.env.RUN_NAME} ${modifiedDate}`
+              }
             }
-          }
-      );
-      addXrayResultUpload(on);
+        );
+        addXrayResultUpload(on);
+      }
       const device = process.env.DEVICE || 'IPHONE_12_PRO';
       config.env.deviceType = DEVICES[device].deviceType;
       config.env.isMobile = config.env.deviceType === 'mobile';
@@ -52,12 +57,13 @@ export default defineConfig({
       config.viewportHeight = DEVICES[device].viewportHeight;
       return config;
     },
-    specPattern: 'cypress/integration/Home**',
+    specPattern: 'cypress/integration/**',
+    supportFile: './cypress/support/index.ts'
   },
   env: {
     XRAY_CLIENT_ID: process.env.XRAY_CLIENT_ID,
     XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
-    JIRA_USERNAME: 'admin@fullstackautomators.com',
+    JIRA_USERNAME: process.env.JIRA_USERNAME,
     JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
   }
 });

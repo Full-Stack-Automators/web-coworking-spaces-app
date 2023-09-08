@@ -30,14 +30,14 @@ const Index = ({ locationGroups }) =>
     </Layout>;
 
 const getLocation = (location) =>
-    <div className="card-body">
+    <div id="featured-location" className="card-body">
         <h5 id="spaces-name" className="card-title text-center">
             {location.name}
         </h5>
         <div className="card-text my-2">
             <Board location={location} />
         </div>
-        <p className="card-text">
+        <p id="address" className="card-text">
             <small className="text-muted">
                 {location.mailingAddress}
             </small>
