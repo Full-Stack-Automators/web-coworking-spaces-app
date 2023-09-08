@@ -28,7 +28,7 @@ on:
         default: 'Regression'
 
       TAGS:
-        description: 'Grouping of tests to run'
+        description: 'Execute tests with specified tag/s'
         required: true
         default: 'Regression'
 

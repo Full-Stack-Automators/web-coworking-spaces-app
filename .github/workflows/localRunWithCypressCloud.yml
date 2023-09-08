@@ -24,7 +24,7 @@ on:
         default: 'Regression'
 
       TAGS:
-        description: 'Grouping of tests to run'
+        description: 'Execute tests with specified tag/s'
         required: true
         default: 'Regression'
 
@@ -70,7 +70,7 @@ jobs:
           echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
           echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
-          echo "$CLOUD_KEY=${{ inputs.BROWSER }}" >> $GITHUB_ENV
+          echo "$CLOUD_KEY=${{ vars.BROWSER }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
           echo "CLOUD_RUN_NAME=${{ inputs.CLOUD_RUN_NAME }}" >> $GITHUB_ENV
 
