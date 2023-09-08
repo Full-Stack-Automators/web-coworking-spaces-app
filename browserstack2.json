@@ -19,7 +19,8 @@
             "cypress-xray-plugin": "^4.0.2",
             "typescript": "^5.1.6",
             "browserstack-cypress-cli": "^1.25.2",
-            "dotenv": "^16.3.1"
+            "dotenv": "^16.3.1",
+            "cypress-tags": "^1.1.2"
         }
     }
 }
