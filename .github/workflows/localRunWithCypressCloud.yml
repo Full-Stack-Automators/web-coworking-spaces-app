@@ -65,12 +65,12 @@ jobs:
           echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
           echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
-          echo "$CLOUD_KEY=${{ vars.CLOUD_KEY }}" >> $GITHUB_ENV
+          echo "CLOUD_KEY=${{ vars.CLOUD_KEY }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
           echo "CLOUD_RUN_NAME=${{ inputs.CLOUD_RUN_NAME }}" >> $GITHUB_ENV
 
-#      - name: Print env
-#        run: env
+      - name: Print env
+        run: env
 
       - name: Cypress run
         run:  CYPRESS_INCLUDE_TAGS=$TAGS COMMIT_INFO_MESSAGE=$CLOUD_RUN_NAME npx cypress run --browser $BROWSER --record --key $CLOUD_KEY

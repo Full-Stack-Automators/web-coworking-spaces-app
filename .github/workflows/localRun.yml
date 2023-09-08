@@ -60,7 +60,6 @@ jobs:
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
           echo "XRAY=${{ inputs.XRAY }}" >> $GITHUB_ENV
-          echo "CLOUD_KEY=${{ vars.CLOUD_KEY }}" >> $GITHUB_ENV
           echo "JIRA_USERNAME=${{ vars.JIRA_USERNAME }}" >> $GITHUB_ENV
 
       - name: Print env
