@@ -13,24 +13,20 @@ on:
         required: true
         default:
           'DESKTOP'
-      CYPRESS_RUN_NAME:
-        description: 'The name of the run'
-        required: true
-        default: 'Regression'
       BROWSER:
         description: 'Browser tests will run on'
         required: true
         default:
           'chrome'
       VERSION:
-        description: 'The name of the run'
+        description: 'Browser version'
         required: true
-        default: 'Regression'
+        default: 'latest'
 
       TAGS:
         description: 'Execute tests with specified tag/s'
         required: true
-        default: 'Regression'
+        default: 'HOMEPAGE_TESTS'
 
 jobs:
   cypress-run:
@@ -51,7 +47,6 @@ jobs:
 
       - name: Copy variables to global env
         run: |
-          echo "RUN_NAME=${{ inputs.CYPRESS_RUN_NAME}}" >> $GITHUB_ENV
           echo "DEVICE=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
           echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
           echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
