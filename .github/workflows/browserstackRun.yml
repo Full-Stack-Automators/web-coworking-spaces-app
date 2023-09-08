@@ -8,11 +8,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      CYPRESS_DEVICE:
-        description: 'Device the tests shall run on'
-        required: true
-        default:
-          'DESKTOP'
       BROWSER:
         description: 'Browser tests will run on'
         required: true
@@ -22,6 +17,11 @@ on:
         description: 'Browser version'
         required: true
         default: 'latest'
+
+      OS:
+        description: 'Operating system'
+        required: true
+        default: 'Windows 11'
 
       TAGS:
         description: 'Execute tests with specified tag/s'
@@ -47,11 +47,10 @@ jobs:
 
       - name: Copy variables to global env
         run: |
-          echo "DEVICE=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
-          echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
+          echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
+          echo "VERSION=${{ inputs.VERSION }}" >> $GITHUB_ENV
+          echo "OS=${{ inputs.OS }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
@@ -60,4 +59,4 @@ jobs:
         run: npm install -g browserstack-cypress-cli
 
       - name: Cypress run
-        run:  CYPRESS_INCLUDE_TAGS=$TAGS browserstack-cypress run
+        run:  CYPRESS_INCLUDE_TAGS=$TAGS browserstack-cypress run --browser "$BROWSER@$VERSION@OS"

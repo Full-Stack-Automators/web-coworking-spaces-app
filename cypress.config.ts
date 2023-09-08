@@ -29,7 +29,7 @@ export default defineConfig({
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
       on('file:preprocessor', tagify(config));
-      if (process.env.XRAY != undefined) {
+      if (process.env.XRAY == 'true') {
         let currentDate = new Date()
         let modifiedDate = currentDate.getDate() + "/"
             + (currentDate.getMonth()+1) + "/"
@@ -49,7 +49,7 @@ export default defineConfig({
         );
         addXrayResultUpload(on);
       }
-      const device = process.env.DEVICE || 'IPHONE_12_PRO';
+      const device = process.env.DEVICE || 'DESKTOP';
       config.env.deviceType = DEVICES[device].deviceType;
       config.env.isMobile = config.env.deviceType === 'mobile';
       config.env.isTablet = config.env.deviceType === 'tablet';

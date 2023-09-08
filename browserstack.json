@@ -3,21 +3,12 @@
         "username": "olaakinola_G6uO2k",
         "access_key": "r5y53E8sYPzKJGpAwSc8"
     },
-    "browsers": [
-        {
-            "browser": "chrome",
-            "os": "Windows 10",
-            "versions": [
-                "latest"
-            ]
-        }
-    ],
     "run_settings": {
         "cypress_config_file": "./cypress.config.ts",
         "project_name": "FSA Cypress Demo",
         "build_name": "FSA Cypress Demo build 1",
         "exclude": [],
-        "parallels": 2,
+        "parallels": 1,
         "npm_dependencies": {
             "cypress": "^12.17.1",
             "cypress-xray-plugin": "^4.0.1",

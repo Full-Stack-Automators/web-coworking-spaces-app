@@ -1,6 +1,7 @@
 /// <reference types="cypress-xpath" />
 
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
+import {LocationModel} from "../../../support/Interfaces/LocationModel";
 
 export class HomePage {
     helperFunctions: HelperFunctions = new HelperFunctions();
@@ -23,7 +24,7 @@ export class HomePage {
     verifyH1Description(): void {
         cy.fixture(this.helperFunctions.const.assertionFixtureFile).then((data) => {
             this.elements.h1Description().then(el => {
-                expect(data['homePage']['h1Description']).contains(el.text());
+                expect(data['homePage']['h1Description']).eq(el.text());
             })
         })
     }
