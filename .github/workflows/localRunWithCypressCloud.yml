@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Run Cypress Tests on and Push Results to Cypress Cloud
+name: Cypress Tests Local - Results CYPRESS CLOUD
 
 on:
   # Allows you to run this workflow manually from the Actions tab

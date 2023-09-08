@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Run Cypress tests on Browserstack
+name: Cypress tests Browserstack
 
 on:
   # Allows you to run this workflow manually from the Actions tab
