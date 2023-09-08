@@ -22,7 +22,7 @@ export class HomePage {
 
     verifyH1Description(): void {
         cy.fixture(this.helperFunctions.const.assertionFixtureFile).then((data) => {
-            this.elements.h1().then(el => {
+            this.elements.h1Description().then(el => {
                 expect(data['homePage']['h1Description']).contains(el.text());
             })
         })

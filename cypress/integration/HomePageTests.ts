@@ -26,7 +26,7 @@ describe(['HOMEPAGE_TESTS'],'Home Page Test Suite', () => {
         homePagePageActions.verifyH1DescriptionText();
     });
 
-    it.only('WEBC-57 - Verify the information on the Featured locations is correct ', () => {
+    it('WEBC-57 - Verify the information on the Featured locations is correct ', () => {
         homePagePageActions.verifyFeaturedLocation();
     });
 });
