@@ -11,8 +11,13 @@ on:
       CYPRESS_DEVICE:
         description: 'Device the tests shall run on'
         required: true
-        default:
-          'DESKTOP'
+        default: DESKTOP
+        type: choice
+        options:
+          - DESKTOP
+          - IPHONE_12_PRO
+          - S20_ULTRA
+          - IPAD_AIR
 
       CLOUD_RUN_NAME:
         description: 'The name of the run for Cypress Dashboard'
