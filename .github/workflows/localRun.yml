@@ -11,8 +11,14 @@ on:
       CYPRESS_DEVICE:
         description: 'Device the tests shall run on'
         required: true
-        default:
-          'DESKTOP'
+        default: DESKTOP
+        type: choice
+        options:
+          - DESKTOP
+          - IPHONE_12_PRO
+          - S20_ULTRA
+          - IPAD_AIR
+
       CYPRESS_RUN_NAME:
         description: 'The name of the run'
         required: true
@@ -66,4 +72,4 @@ jobs:
         run: env
 
       - name: Cypress run
-        run:  CYPRESS_INCLUDE_TAGS=$TAGS npx cypress run --browser $BROWSER
+        run:  DEVICE=$DEVICE CYPRESS_INCLUDE_TAGS=$TAGS npx cypress run --browser $BROWSER

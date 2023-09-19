@@ -2,7 +2,7 @@ export interface RoomModel {
     type: string;
     monthlyRate: string;
     seats: number;
-    washroom: boolean;
+    privateWashroom: boolean;
     phone: boolean;
     windows: boolean;
     corner: boolean;

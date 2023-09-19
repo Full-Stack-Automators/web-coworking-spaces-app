@@ -21,7 +21,6 @@
   "devDependencies": {
     "@types/react": "18.0.1",
     "browserstack-cypress-cli": "^1.25.2",
-    "cypress-xpath": "^2.0.1",
     "cypress-xray-plugin": "^4.0.2",
     "typescript": "^5.1.6"
   }

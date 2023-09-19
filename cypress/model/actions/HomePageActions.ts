@@ -18,4 +18,8 @@ export class HomePageActions {
     verifyFeaturedLocation(): void {
         this.homePage.verifyFeaturedLocation();
     }
+
+    clickLearnMore(): void {
+        this.homePage.clickLearnMore();
+    }
 }

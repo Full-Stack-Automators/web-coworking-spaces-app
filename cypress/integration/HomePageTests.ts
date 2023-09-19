@@ -2,11 +2,14 @@
 
 import {HomePageActions} from "../model/actions/HomePageActions";
 import {LocationsPageActions} from "../model/actions/LocationsPageActions";
+import {HelperFunctions} from "../support/Helper/HelperFunctions";
 
-const homePagePageActions: HomePageActions = new HomePageActions()
-const locationsPageActions: LocationsPageActions = new LocationsPageActions()
+const homePagePageActions: HomePageActions = new HomePageActions();
+const locationsPageActions: LocationsPageActions = new LocationsPageActions();
+const helperFunctions: HelperFunctions = new HelperFunctions();
 beforeEach(() => {
     cy.visit('')
+    helperFunctions.storeRandomLocationID();
 });
 
 describe(['HOMEPAGE_TESTS'],'Home Page Test Suite', () => {

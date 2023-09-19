@@ -30,7 +30,7 @@ const Index = ({ locationGroups }) =>
     </Layout>;
 
 const getLocation = (location) =>
-    <div id="featured-location" className="card-body">
+    <div id={location.name.replace(/\s/g, '').replace(',', '')} className="card-body">
         <h5 id="spaces-name" className="card-title text-center">
             {location.name}
         </h5>

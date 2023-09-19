@@ -1,36 +1,40 @@
 {
   "locations": [
     {
-      "name" : "MCGLYNN - KUNZE SQUARE",
+      "id" : "Bashirian-WilliamsonCenter",
+      "name" : "Bashirian - Williamson Center",
       "parking" : true,
       "conferenceRooms" : true,
       "receptionServices" : true,
       "publicAccess" : false,
-      "address" : "320 Westlake Ave N Seattle, WA 98109"
+      "address" : "3309 Esperanza Xing Austin, TX 78758"
     },
     {
-      "name" : "SCHOEN, RAU AND WINDLER SQUARE",
-      "parking" : false,
-      "conferenceRooms" : false,
-      "receptionServices" : false,
-      "publicAccess" : true,
-      "address" : "3400 Menaul Blvd NE Albuquerque, NM 87107"
-    },
-    {
-      "name" : "CRONIN GROUP PLAZA",
-      "parking" : false,
-      "conferenceRooms" : false,
-      "receptionServices" : true,
-      "publicAccess" : false,
-      "address" : "2126 Abbott Martin Rd Nashville, TN 37215"
-    },
-    {
-      "name" : "BASHIRIAN - WILLIAMSON CENTER",
+      "id" : "FeilMcClureandDaughertyBuilding",
+      "name" : "Feil, McClure and Daugherty Building",
       "parking" : false,
       "conferenceRooms" : true,
       "receptionServices" : true,
+      "publicAccess" : true,
+      "address" : "700 Bellevue Way Bellevue, WA 98004"
+    },
+    {
+      "id" : "DanielMcDermottandDouglasSquare",
+      "name" : "Daniel, McDermott and Douglas Square",
+      "parking" : false,
+      "conferenceRooms" : false,
+      "receptionServices" : true,
       "publicAccess" : false,
-      "address" : "3309 Esperanza Xing Austin, TX 78758"
+      "address" : "7014 E Camelback Rd Scottsdale, AZ 85251"
+    },
+    {
+      "id" : "TurnerSchoenandBogisichCenter",
+      "name" : "Turner, Schoen and Bogisich Center",
+      "parking" : false,
+      "conferenceRooms" : true,
+      "receptionServices" : true,
+      "publicAccess" : true,
+      "address" : "3401 Nicholasville Rd Lexington, KY 40503"
     }
   ]
 }

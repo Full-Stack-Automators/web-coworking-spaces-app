@@ -10,7 +10,7 @@ export class HomePage extends DesktopPage {
         ...this.elements
     };
 
-    verifyHeaderText() {
+    verifyH1Text() {
         super.verifyH1Text();
         cy.log("This is a mobile verifyHeaderText() function");
     }

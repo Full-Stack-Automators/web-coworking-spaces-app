@@ -1,9 +1,9 @@
 import {LocationPage} from "../pages/LocationPage";
 
-export class LocationsPageActions {
+export class LocationPageActions {
     locationPage: LocationPage = new LocationPage()
 
-    exampleFunction(): void {
-        this.locationPage;
+    verifyRoomsFeatures(): void {
+        this.locationPage.verifyRoomsFeatures();
     }
 }

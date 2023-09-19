@@ -26,3 +26,5 @@ log/
 /logs/
 npm_install_debug.log
 results/
+
+.env

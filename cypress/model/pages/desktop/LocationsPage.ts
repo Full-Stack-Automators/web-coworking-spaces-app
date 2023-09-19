@@ -1,4 +1,6 @@
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
+import {LocationData} from "../../../support/Interfaces/LocationData";
+import {RoomModel} from "../../../support/Interfaces/RoomModel";
 
 export class LocationsPage {
     helperFunctions: HelperFunctions = new HelperFunctions();

@@ -1,7 +1,6 @@
-/// <reference types="cypress-xpath" />
-
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
 import {LocationModel} from "../../../support/Interfaces/LocationModel";
+import {LocationData} from "../../../support/Interfaces/LocationData";
 
 export class HomePage {
     helperFunctions: HelperFunctions = new HelperFunctions();
@@ -10,7 +9,9 @@ export class HomePage {
         h1: () => cy.get('#header-tagline'),
         h1Description: () => cy.get('#header-description'),
         exploreOurLocationsButton: () => cy.get('#explore-location'),
-        address: () => cy.xpath("//*[contains(text(), 'Bashirian - Williamson Center')]//ancestor::div[1]//*[@id='address']"),
+        addressLocator: '#{replacementText} #address',
+        parkingLocator: '#{replacementText} #fa-suitcase .fa-check',
+        learnMoreButtonLocator: '#{replacementText} #learn-more'
     }
 
     verifyH1Text(): void {
@@ -31,15 +32,25 @@ export class HomePage {
 
     verifyFeaturedLocation(): void {
         cy.fixture(this.helperFunctions.const.locationsFixtureFile).then((data) => {
-            this.elements.address().then(el => {
-                cy.log(el.text());
-                cy.log(data['locations'][3]['address']);
-                expect(el.text()).eq(data['locations'][3]['address']);
+            cy.get<LocationData>('@locationData').then(locationData => {
+                const addressLocator = this.elements.addressLocator.replace('{replacementText}', locationData.locationID);
+                cy.get(addressLocator).then(el => {
+                    cy.log(el.text());
+                    cy.log(data['locations'][locationData.locationIndex]['address']);
+                    expect(el.text()).eq(data['locations'][locationData.locationIndex]['address']);
+                });
             });
-        })
+        });
     }
 
     clickExploreOurLocations(): void {
         this.elements.exploreOurLocationsButton().click();
+    }
+
+    clickLearnMore(): void {
+        cy.get<LocationData>('@locationData').then(locationData => {
+            const locator = this.elements.learnMoreButtonLocator.replace('{replacementText}', locationData.locationID);
+            cy.get(locator).click();
+        });
     }
 }

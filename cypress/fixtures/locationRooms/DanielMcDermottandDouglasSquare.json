@@ -1,0 +1,18 @@
+{
+  "TeamOffice" : {
+    "monthlyRate" : "$3,690.77",
+    "seats": 3,
+    "privateWashroom" : false,
+    "phone": true,
+    "windows": false,
+    "corner" : false
+  },
+  "PairSuite" : {
+    "monthlyRate" : "$3,317.32",
+    "seats": 2,
+    "privateWashroom" : true,
+    "phone": true,
+    "windows": false,
+    "corner" : false
+  }
+}

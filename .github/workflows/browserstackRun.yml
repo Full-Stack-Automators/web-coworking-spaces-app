@@ -59,4 +59,4 @@ jobs:
         run: npm install -g browserstack-cypress-cli
 
       - name: Cypress run
-        run:  CYPRESS_INCLUDE_TAGS=$TAGS browserstack-cypress run --browser "$BROWSER@$VERSION@OS"
+        run:  CYPRESS_INCLUDE_TAGS=$TAGS browserstack-cypress run --browser "$BROWSER@$VERSION:$OS"

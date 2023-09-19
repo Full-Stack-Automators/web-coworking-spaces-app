@@ -1,8 +1,4 @@
 {
-    "auth": {
-        "username": "olaakinola_G6uO2k",
-        "access_key": "r5y53E8sYPzKJGpAwSc8"
-    },
     "run_settings": {
         "cypress_config_file": "./cypress.config.ts",
         "project_name": "FSA Cypress Demo",

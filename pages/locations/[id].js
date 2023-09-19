@@ -44,7 +44,7 @@ const getTable = (location) =>
         </thead>
         <tbody>            
             {location.rooms.map((room) => (
-                <tr id={room.description} key="{room.description}">
+                <tr id={room.description.replace(/\s/g, '')} key="{room.description}">
                     <th id="room" scope="row">
                         {room.description}
                     </th>

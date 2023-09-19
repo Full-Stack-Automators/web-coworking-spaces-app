@@ -1,0 +1,66 @@
+{
+  "CoworkingSuite": {
+    "monthlyRate": "$9,255.18",
+    "seats": 5,
+    "privateWashroom": true,
+    "phone": false,
+    "windows": false,
+    "corner": false
+  },
+  "CoworkingCornerOffice": {
+    "monthlyRate": "$8,265.89",
+    "seats": 5,
+    "privateWashroom": false,
+    "phone": false,
+    "windows": false,
+    "corner": true
+  },
+  "PairSuite": {
+    "monthlyRate": "$3,847.05",
+    "seats": 2,
+    "privateWashroom": true,
+    "phone": true,
+    "windows": false,
+    "corner": false
+  },
+  "SingleCornerSuite": {
+    "monthlyRate": "$1,380.95",
+    "seats": 1,
+    "privateWashroom": true,
+    "phone": false,
+    "windows": false,
+    "corner": true
+  },
+  "PairOffice": {
+    "monthlyRate": "$3,760.46",
+    "seats": 2,
+    "privateWashroom": false,
+    "phone": true,
+    "windows": false,
+    "corner": false
+  },
+  "PairCornerOffice": {
+    "monthlyRate": "$3,204.63",
+    "seats": 2,
+    "privateWashroom": false,
+    "phone": false,
+    "windows": false,
+    "corner": true
+  },
+  "SingleSuite": {
+    "monthlyRate": "$1,969.82",
+    "seats": 1,
+    "privateWashroom": true,
+    "phone": true,
+    "windows": false,
+    "corner": false
+  },
+  "TeamCornerSuite": {
+    "monthlyRate": "$4,590.75",
+    "seats": 3,
+    "privateWashroom": true,
+    "phone": false,
+    "windows": false,
+    "corner": true
+  }
+}

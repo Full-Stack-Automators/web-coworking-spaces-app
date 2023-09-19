@@ -65,5 +65,8 @@ export default defineConfig({
     XRAY_CLIENT_SECRET: process.env.XRAY_CLIENT_SECRET,
     JIRA_USERNAME: process.env.JIRA_USERNAME,
     JIRA_API_TOKEN: process.env.JIRA_API_TOKEN,
+    OS: process.env.OS,
+    VERSION: process.env.VERSION,
+    BROWSER: process.env.BROWSER,
   }
 });
