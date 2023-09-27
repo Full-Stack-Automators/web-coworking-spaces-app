@@ -8,7 +8,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      CYPRESS_DEVICE:
+      DEVICE:
         description: 'Device the tests shall run on'
         required: true
         default: DESKTOP
@@ -65,10 +65,10 @@ jobs:
 
       - name: Copy variables to global env
         run: |
-          echo "DEVICE=${{ inputs.CYPRESS_DEVICE}}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_ID=${{ secrets.CYPRESS_XRAY_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "XRAY_CLIENT_SECRET=${{ secrets.CYPRESS_XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
-          echo "JIRA_API_TOKEN=${{ secrets.CYPRESS_JIRA_API_TOKEN }}" >> $GITHUB_ENV
+          echo "DEVICE=${{ inputs.DEVICE}}" >> $GITHUB_ENV
+          echo "XRAY_CLIENT_ID=${{ secrets.XRAY_CLIENT_ID }}" >> $GITHUB_ENV
+          echo "XRAY_CLIENT_SECRET=${{ secrets.XRAY_CLIENT_SECRET }}" >> $GITHUB_ENV
+          echo "JIRA_API_TOKEN=${{ secrets.JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
           echo "CLOUD_KEY=${{ vars.CLOUD_KEY }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV

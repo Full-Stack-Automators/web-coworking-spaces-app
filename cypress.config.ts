@@ -29,7 +29,7 @@ export default defineConfig({
     baseUrl: 'https://full-stack-automators.github.io/web-coworking-spaces-app/',
     setupNodeEvents(on, config) {
       on('file:preprocessor', tagify(config));
-      if (process.env.XRAY == 'true') {
+      if (process.env.XRAY_RUN == 'true') {
         let currentDate = new Date()
         let modifiedDate = currentDate.getDate() + "/"
             + (currentDate.getMonth()+1) + "/"
