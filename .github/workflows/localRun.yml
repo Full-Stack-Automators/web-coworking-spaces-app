@@ -29,7 +29,7 @@ on:
         required: true
         default: 'Regression'
 
-      XRAY:
+      XRAY_RUN:
         description: 'Push run results to XRAY'
         required: true
         default: true
@@ -65,7 +65,7 @@ jobs:
           echo "JIRA_API_TOKEN=${{ secrets.JIRA_API_TOKEN }}" >> $GITHUB_ENV
           echo "BROWSER=${{ inputs.BROWSER }}" >> $GITHUB_ENV
           echo "TAGS=${{ inputs.TAGS }}" >> $GITHUB_ENV
-          echo "XRAY=${{ inputs.XRAY }}" >> $GITHUB_ENV
+          echo "XRAY_RUN=${{ inputs.XRAY_RUN }}" >> $GITHUB_ENV
           echo "JIRA_USERNAME=${{ vars.JIRA_USERNAME }}" >> $GITHUB_ENV
 
       - name: Print env
