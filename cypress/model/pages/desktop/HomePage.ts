@@ -1,5 +1,4 @@
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
-import {LocationModel} from "../../../support/Interfaces/LocationModel";
 import {LocationData} from "../../../support/Interfaces/LocationData";
 
 export class HomePage {
@@ -31,16 +30,12 @@ export class HomePage {
     }
 
     verifyFeaturedLocation(): void {
-        cy.fixture(this.helperFunctions.const.locationsFixtureFile).then((data) => {
             cy.get<LocationData>('@locationData').then(locationData => {
-                const addressLocator = this.elements.addressLocator.replace('{replacementText}', locationData.locationID);
+                const addressLocator = this.elements.addressLocator.replace('{replacementText}', locationData.id);
                 cy.get(addressLocator).then(el => {
-                    cy.log(el.text());
-                    cy.log(data['locations'][locationData.locationIndex]['address']);
-                    expect(el.text()).eq(data['locations'][locationData.locationIndex]['address']);
+                    expect(el.text()).eq(locationData.address);
                 });
             });
-        });
     }
 
     clickExploreOurLocations(): void {
@@ -49,7 +44,7 @@ export class HomePage {
 
     clickLearnMore(): void {
         cy.get<LocationData>('@locationData').then(locationData => {
-            const locator = this.elements.learnMoreButtonLocator.replace('{replacementText}', locationData.locationID);
+            const locator = this.elements.learnMoreButtonLocator.replace('{replacementText}', locationData.id);
             cy.get(locator).click();
         });
     }

@@ -1,6 +1,6 @@
 import {HelperFunctions} from "../../../support/Helper/HelperFunctions";
 import {LocationData} from "../../../support/Interfaces/LocationData";
-import {RoomModel} from "../../../support/Interfaces/RoomModel";
+import {RoomData} from "../../../support/Interfaces/RoomData";
 import {Rooms} from "../../../support/Enums/Rooms";
 
 export class LocationPage {
@@ -17,20 +17,19 @@ export class LocationPage {
 
     verifyRoomsFeatures(): void {
         cy.get<LocationData>('@locationData').then(locationData => {
-            const locationID = locationData.locationID
-            cy.fixture(`locationRooms/${locationID}`).then((data) => {
+            cy.fixture(`locationRooms/${locationData.id}`).then((data) => {
                 const rooms = Object.values(Rooms);
                 rooms.forEach((values, index) => {
                     if (data[values]) {
-                        const roomModel: RoomModel = data[values];
-                        this.verifyRoomBoolean(values, roomModel);
+                        const roomData: RoomData = data[values];
+                        this.verifyRoomBoolean(values, roomData);
                     }
                 });
             });
         });
     }
 
-    verifyRoomBoolean(roomID: string ,room: RoomModel): void {
+    verifyRoomBoolean(roomID: string, room: RoomData): void {
         this.assertRoomFeature(this.elements.privateWashroomLocator, roomID, room.privateWashroom);
         this.assertRoomFeature(this.elements.phoneLocator, roomID, room.phone);
         this.assertRoomFeature(this.elements.windowsLocator, roomID, room.windows);
@@ -38,11 +37,11 @@ export class LocationPage {
     }
 
     assertRoomFeature(locator: string, roomID: string, featureExists: boolean) {
-            const formattedLocator = locator.replace('{replacementText}', roomID);
-            if (featureExists) {
-                cy.get(formattedLocator).should('exist');
-            } else {
-                cy.get(formattedLocator).should('not.exist');
-            }
+        const formattedLocator = locator.replace('{replacementText}', roomID);
+        if (featureExists) {
+            cy.get(formattedLocator).should('exist');
+        } else {
+            cy.get(formattedLocator).should('not.exist');
+        }
     }
 }

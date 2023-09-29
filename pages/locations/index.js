@@ -23,7 +23,7 @@ const Index = ({ locationGroups }) =>
 const getLocation = (location) =>
     <>
         <img src={'img/' + location.image} className="card-img-top" alt={location.name} />
-        <div id={location.name.replace(/\s/g, '')} className="card-body">
+        <div id={location.name.replace(/\s/g, '').replace(',', '')} className="card-body">
             <h5 id="spaces-name" className="card-title text-center">
                 {location.name}
             </h5>

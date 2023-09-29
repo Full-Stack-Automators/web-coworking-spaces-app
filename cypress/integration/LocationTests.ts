@@ -8,7 +8,7 @@ const helperFunctions: HelperFunctions = new HelperFunctions()
 
 beforeEach(() => {
     cy.visit('')
-    helperFunctions.storeRandomLocationID();
+    helperFunctions.storeRandomData();
 });
 
 describe(['LOCATION_TESTS'], 'Location Page Test Suite', () => {

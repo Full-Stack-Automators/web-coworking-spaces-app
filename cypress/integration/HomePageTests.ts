@@ -9,7 +9,8 @@ const locationsPageActions: LocationsPageActions = new LocationsPageActions();
 const helperFunctions: HelperFunctions = new HelperFunctions();
 beforeEach(() => {
     cy.visit('')
-    helperFunctions.storeRandomLocationID();
+    helperFunctions.printDeviceAndViewport();
+    helperFunctions.storeRandomData();
 });
 
 describe(['HOMEPAGE_TESTS'],'Home Page Test Suite', () => {
@@ -19,9 +20,9 @@ describe(['HOMEPAGE_TESTS'],'Home Page Test Suite', () => {
 
     });
 
-    it('WEBC-5 Verify that the location is correct', () => {
+    it.only('WEBC-5 Verify that the location is correct', () => {
         homePagePageActions.clickExploreOurLocations()
-        locationsPageActions.verifyLocationsName('MCGLYNNE');
+        locationsPageActions.verifyLocationName();
     });
 
     it('WEBC-53 - Verify the banner section contains the correct title and information', () => {

@@ -1,4 +1,4 @@
-export interface RoomModel {
+export interface RoomData {
     type: string;
     monthlyRate: string;
     seats: number;
