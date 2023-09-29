@@ -34,6 +34,12 @@ on:
         default: false
         type: boolean
 
+      VIDEO:
+        description: 'Upload video of the test run'
+        required: true
+        default: false
+        type: boolean
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -58,6 +64,7 @@ jobs:
           echo "VERSION=${{ inputs.VERSION }}" >> $GITHUB_ENV
           echo "OS=${{ inputs.OS }}" >> $GITHUB_ENV
           echo "XRAY_RUN=${{ inputs.XRAY_RUN }}" >> $GITHUB_ENV
+          echo "VIDEO=${{ inputs.VIDEO }}" >> $GITHUB_ENV
 
       - name: Print env
         run: env
