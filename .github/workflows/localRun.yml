@@ -68,8 +68,5 @@ jobs:
           echo "XRAY_RUN=${{ inputs.XRAY_RUN }}" >> $GITHUB_ENV
           echo "JIRA_USERNAME=${{ vars.JIRA_USERNAME }}" >> $GITHUB_ENV
 
-      - name: Print env
-        run: env
-
       - name: Cypress run
         run:  DEVICE=$DEVICE CYPRESS_INCLUDE_TAGS=$TAGS npx cypress run --browser $BROWSER
