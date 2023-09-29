@@ -6,8 +6,8 @@ export class LocationsPage extends DesktopPage {
         ...this.elements
     }
 
-    verifyLocationsName(spacesName: string): void {
-        super.verifyLocationsName(spacesName);
+    verifyLocationName(): void {
+        super.verifyLocationName();
         cy.log("This is a mobile verifyLocationsName() function");
     }
 }
